@@ -1,6 +1,6 @@
-const http = require('https')
+const { get } = require('https')
 
-const req = http.request('https://www.baidu.com', (res) => {
+const req = get('https://www.baidu.com', (res) => {
     res.on('data', (data) => {
         console.log(data);
     })
@@ -8,5 +8,3 @@ const req = http.request('https://www.baidu.com', (res) => {
         console.log('no more data');
     })
 })
-
-req.end()
